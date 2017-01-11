@@ -757,7 +757,7 @@ class _Union(_FinalTypingBase, _root=True):
 
     def __eq__(self, other):
         if not isinstance(other, _Union):
-            return self._subs_tree() == other
+            return self._subs_tree() is not self and self._subs_tree() == other
         return self.__tree_hash__ == other.__tree_hash__
 
     def __hash__(self):

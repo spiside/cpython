@@ -217,6 +217,9 @@ class UnionTests(BaseTestCase):
         self.assertNotEqual(u2, Any)
         self.assertNotEqual(u3, Any)
 
+    def test_union_compare_other(self):
+        self.assertNotEqual(Union, object)
+
     def test_union_object(self):
         u = Union[object]
         self.assertEqual(u, object)
